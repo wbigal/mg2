@@ -58,7 +58,7 @@ class RomanNumeral
       counter += 1
       current_value = reverse[i]
 
-      raise ArgumentError, 'The argument is not a roman numeral' if (counter >= 4)
+      raise InvalidRomanNumeralError if (counter >= 4)
 
       i += 1
     end
