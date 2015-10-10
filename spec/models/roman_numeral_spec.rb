@@ -9,7 +9,7 @@ describe RomanNumeral do
     end
 
     it 'invalid roman numeral' do
-      expect { build(:roman_numerals_invalid) }.to raise_error(ArgumentError)
+      expect { build(:roman_numerals_invalid) }.to raise_error(InvalidRomanNumeralError)
     end
   end
 
