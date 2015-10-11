@@ -8,11 +8,11 @@ class Credit
   def initialize(sentence)
     @sentence = sentence
     @information = @sentence.match(CREDIT_PATTERN)[1]
-    @value = @sentence.match(CREDIT_PATTERN)[2].to_i
+    @value = @sentence.match(CREDIT_PATTERN)[2].to_f
   end
 
   def unit_value
-    @value / denominator
+    @value / denominator.to_f
   end
 
   def self.is_credits? sentence

@@ -20,7 +20,7 @@ class CreditAwnser
       roman_numeral += Knowledge.instance.value(words[i])
     end
 
-    roman_numeral_value = roman_numeral == '' ? 1 : RomanNumeral.new(roman_numeral).int_value
+    roman_numeral_value = roman_numeral == '' ? 1 : RomanNumeral.new(roman_numeral).int_value.to_f
 
     roman_numeral_value * Knowledge.instance.value(words.last)
   end

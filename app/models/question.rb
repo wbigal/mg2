@@ -14,7 +14,7 @@ class Question
     SingleNumeralAwnser.is_single_numeral_question? @phrase
   end
 
-  def awnser
+  def int_awnser
     if is_single_numeral_question?
       SingleNumeralAwnser.new(self).value
     elsif is_credit_question?

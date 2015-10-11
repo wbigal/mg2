@@ -9,7 +9,9 @@ describe Question do
     Knowledge.instance.learn 'prok is V'
     Knowledge.instance.learn 'pish is X'
     Knowledge.instance.learn 'tegj is L'
-    Knowledge.instance.learn CREDIT_SENTENCE
+    Knowledge.instance.learn 'glob glob Silver is 34 Credits'
+    Knowledge.instance.learn 'glob prok Gold is 57800 Credits'
+    Knowledge.instance.learn 'pish pish Iron is 3910 Credits'
   end
 
   it '#is_credit_question?' do
@@ -22,8 +24,13 @@ describe Question do
     expect(assertions_single_numeral.is_credit_question?).to be_falsey
   end
 
-  it '#awnser' do
-    expect(assertion_credit.awnser).to be(68)
-    expect(assertions_single_numeral.awnser).to be(42)
+  it '#int_awnser' do
+    expect(Question.new('how much is pish tegj glob glob ?').int_awnser).to eq(42)
+    expect(Question.new('how many Credits is glob prok Silver ?').int_awnser).to eq(68)
+    expect(Question.new('how many Credits is glob prok Gold ?').int_awnser).to eq(57800)
+    expect(Question.new('how many Credits is glob prok Iron ?').int_awnser).to eq(782)
+
+
+    #expect(Question.new('how much wood could a woodchuck chuck if a woodchuck could chuck wood ?').int_awnser).to eq(42)
   end
 end
