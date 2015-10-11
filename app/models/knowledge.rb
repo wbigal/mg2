@@ -22,9 +22,9 @@ class Knowledge
     obj = @informations[information]
 
     if (obj.kind_of?(SingleNumeral))
-      @informations[information].value
+      obj.value
     elsif (obj.kind_of?(Credit))
-      @informations[information].unit_value
+      obj.unit_value
     end
   end
 end

@@ -1,20 +1,15 @@
 Dir[File.dirname(__FILE__) + "/app/**/*.rb"].each { |file| load file }
 
-input = [
-  'glob is I',
-  'prok is V',
-  'pish is X',
-  'tegj is L',
-  'glob glob Silver is 34 Credits',
-  'glob prok Gold is 57800 Credits',
-  'pish pish Iron is 3910 Credits'
-]
+file = ARGV[0] || "input.txt"
 
-input.each do |item|
-  Knowledge.instance.learn item
+is = InputService.new
+
+File.open(file, "r") do |f|
+  f.each_line do |line|
+    is.input line
+  end
 end
 
-q = Question.new('how much is pish tegj glob glob?')
-
-#credit = Credit.new('glob prok Gold is 57800 Credits')
-#puts credit.unit_value
+is.output.each do |message|
+  puts message
+end
