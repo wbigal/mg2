@@ -10,12 +10,12 @@ class CreditAwnser
     @value = calculate_value
   end
 
-  def self.is_credit_question? question
-    question =~ CREDIT_QUESTION_PATTERN
-  end
-
   def awnser
     "#{@sentence} is #{@value.to_s.chomp('.0')} Credits"
+  end
+
+  def self.is_credit_question? question
+    question =~ CREDIT_QUESTION_PATTERN
   end
 
   private
