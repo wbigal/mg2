@@ -11,6 +11,7 @@ describe RomanNumeral do
 
     it 'invalid roman numeral' do
       expect { build(:roman_numerals_invalid) }.to raise_error(InvalidRomanNumeralError)
+      expect { RomanNumeral.new('IVA') }.to raise_error(InvalidRomanNumeralError)
     end
   end
 

@@ -36,4 +36,11 @@ describe Question do
     expect(Question.new('how many Credits is glob prok Gold ?').float_awnser).to eq(57800)
     expect(Question.new('how many Credits is glob prok Iron ?').float_awnser).to eq(782)
   end
+
+  it '#awnser' do
+    expect(Question.new('how much is pish tegj glob glob ?').awnser).to eq('pish tegj glob glob is 42')
+    expect(Question.new('how many Credits is glob prok Silver ?').awnser).to eq('glob prok Silver is 68 Credits')
+    expect(Question.new('how many Credits is glob prok Gold ?').awnser).to eq('glob prok Gold is 57800 Credits')
+    expect(Question.new('how many Credits is glob prok Iron ?').awnser).to eq('glob prok Iron is 782 Credits')
+  end
 end

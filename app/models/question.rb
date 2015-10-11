@@ -26,4 +26,8 @@ class Question
   def float_awnser
     @awnser_object.value
   end
+
+  def awnser
+    @awnser_object.awnser
+  end
 end
