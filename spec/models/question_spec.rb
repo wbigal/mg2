@@ -29,8 +29,6 @@ describe Question do
     expect(Question.new('how many Credits is glob prok Silver ?').int_awnser).to eq(68)
     expect(Question.new('how many Credits is glob prok Gold ?').int_awnser).to eq(57800)
     expect(Question.new('how many Credits is glob prok Iron ?').int_awnser).to eq(782)
-
-
-    #expect(Question.new('how much wood could a woodchuck chuck if a woodchuck could chuck wood ?').int_awnser).to eq(42)
+    expect(Question.new('how much wood could a woodchuck chuck if a woodchuck could chuck wood ?').int_awnser).to eq(42)
   end
 end
