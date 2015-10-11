@@ -58,7 +58,7 @@ class RomanNumeral
       counter += 1
       current_value = reverse[i]
 
-      raise InvalidRomanNumeralError if (counter >= 4)
+      raise InvalidRomanNumeralError if (!NUMERALS.key?(current_value) || counter >= 4)
 
       i += 1
     end
