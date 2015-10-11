@@ -19,6 +19,12 @@ class Knowledge
   end
 
   def value information
-    @informations[information].value
+    obj = @informations[information]
+
+    if (obj.kind_of?(SingleNumeral))
+      @informations[information].value
+    elsif (obj.kind_of?(Credit))
+      @informations[information].unit_value
+    end
   end
 end
