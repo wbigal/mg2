@@ -14,6 +14,12 @@ describe Question do
     Knowledge.instance.learn 'pish pish Iron is 3910 Credits'
   end
 
+  it 'constructor fail' do
+    expect {
+      Question.new('how much wood could a woodchuck chuck if a woodchuck could chuck wood ?')
+    }.to raise_error(DidNotUnderstandError)
+  end
+
   it '#is_credit_question?' do
     expect(assertion_credit.is_credit_question?).to be_truthy
     expect(assertion_credit.is_single_numeral_question?).to be_falsey
@@ -24,11 +30,10 @@ describe Question do
     expect(assertions_single_numeral.is_credit_question?).to be_falsey
   end
 
-  it '#int_awnser' do
-    expect(Question.new('how much is pish tegj glob glob ?').int_awnser).to eq(42)
-    expect(Question.new('how many Credits is glob prok Silver ?').int_awnser).to eq(68)
-    expect(Question.new('how many Credits is glob prok Gold ?').int_awnser).to eq(57800)
-    expect(Question.new('how many Credits is glob prok Iron ?').int_awnser).to eq(782)
-    expect(Question.new('how much wood could a woodchuck chuck if a woodchuck could chuck wood ?').int_awnser).to eq(42)
+  it '#float_awnser' do
+    expect(Question.new('how much is pish tegj glob glob ?').float_awnser).to eq(42)
+    expect(Question.new('how many Credits is glob prok Silver ?').float_awnser).to eq(68)
+    expect(Question.new('how many Credits is glob prok Gold ?').float_awnser).to eq(57800)
+    expect(Question.new('how many Credits is glob prok Iron ?').float_awnser).to eq(782)
   end
 end

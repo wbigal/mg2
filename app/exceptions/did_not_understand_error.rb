@@ -1,0 +1,3 @@
+class DidNotUnderstandError < StandardError
+
+end
